@@ -1,0 +1,658 @@
+body {
+    background: #F2F6FF;
+    color: #202c2d;
+}
+
+.jumbotron.jumbotron-fluid .container h1 {
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(57, 57, 57);
+    text-transform: uppercase;
+    /* color: red; */
+    text-shadow: 0 2px 0 rgb(209, 209, 209);
+}
+
+.card {
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    max-width: 100%;
+    height: 100px;
+    /* margin: 75px auto; */
+    background: transparent;
+}
+.card.ketua {
+    margin-bottom: -150px;
+}
+.card.ketua .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card.ketua .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    clip-path: circle(22% at center);
+    transition: 1s;
+}
+.card:hover .circle::before {
+    background: blue;
+    clip-path: circle(100% at center);
+}
+.card img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.card .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+.card .content .content-judul,
+.card .content .content-isi {
+    width: 40%;
+    text-align: center;
+    padding: 25px 10px 10px 10px;
+}
+.card .content .content-judul h6,
+.card .content .content-isi p {
+    color: #fff;
+    text-shadow: 0 0 0 #fff;
+}
+.card .content .content-isi {
+    padding: 35px 10px 10px 10px;
+}
+.card:hover .content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card.waketu {
+    width: 100%;
+    margin-bottom: 50px;
+    transition: .5s;
+}
+.card.waketu .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card.waketu .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: orange;
+    clip-path: circle(40% at center);
+    transition: 1s;
+}
+.card.waketu:hover .circle::before {
+    background: blue;
+    clip-path: circle(400px at center);
+}
+.card.waketu img {
+    width: 60%;
+    transition: .5s;
+}
+.card.waketu:hover {
+    height: 200px;
+}
+.card.waketu:hover img {
+    top: 72%;
+    width: 50%;
+}
+.card.waketu .content {
+    flex-wrap: wrap;
+}
+.card.waketu .content .content-judul,
+.card.waketu .content .content-isi {
+    width: 100%
+}
+.card.waketu .content .content-isi {
+    margin-top: -50px;
+}
+
+
+.card.waketu.sekretaris .circle::before {
+    background: gold;
+}
+.card.waketu.sekretaris img {
+    transition: .5s;
+}
+.card.waketu.sekretaris:hover img {
+    top: 30%;
+    width: 50%;
+}
+.card.waketu.sekretaris:hover .content {
+    margin-top: 90px;
+}
+
+
+/* Projek atau stuktur kelas */
+section #projek .row {
+    width: 100%;
+}
+
+svg.ttTibalik {
+    transform: rotateX(140deg);
+    rotate: 180deg;
+    width: 100%;
+    margin-bottom: -10px;
+    filter: drop-shadow(0 -10px 1px #555);
+}
+
+svg.tibalik {
+    /* position: absolute; */
+    transform: rotateX(140deg);
+    margin-top: -25px;
+    filter: drop-shadow(0 -10px 1px #555);
+}
+
+
+.jumbotron.jumbotron-fluid .container h1 {
+    font-size: 1.3em;
+}
+
+.jumbotron {
+    /* display: grid; */
+    position: relative;
+    /* background: url(img/x-1.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    /* height: 500px; */
+    filter: drop-shadow(0 10px 10px #555);
+    /* margin-bottom: 10px; */
+    /* animation: slide 20s infinite reverse; */
+    overflow: hidden;
+}
+.jumbotron.jumbotron-fluid .container {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slides {
+    width: 500%;
+    /* height: 500px; */
+    display: flex;
+}
+.slides input {
+    display: none;
+}
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+.slide img {
+    width: 100%;
+    height: auto;
+}
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    margin-top: -5%;
+    display: flex;
+    justify-content: center;
+    /* display: none; */
+}
+.manual-btn {
+    border: 2px solid blue;
+    padding: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1ms;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+.manual-btn:hover {
+    background: blue;
+}
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 51.3%;
+}
+.navigation-auto div {
+    border: 2px solid blue;
+    padding: 3px;
+    border-radius: 10px;
+    transition: 1s;
+}
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background: blue;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background: blue;
+}
+#radio3:checked ~ .navigation-auto .auto-btn {
+    background: blue;
+}
+
+.jumbotron .container {
+    width: 100%;
+    /* margin: 0; */
+    margin: auto;
+
+}
+
+
+.jumbotron.jumbotron-fluid h1 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.jumbotron.jumbotron-fluid h1 span {
+    font-size: 1.6em;
+}
+
+.gelombang-b {
+    filter: drop-shadow(0 10px 3px blue);
+}
+
+.gelombang-t {
+    filter: drop-shadow(0 -10px 3px blue);
+}
+
+.str-class {
+    position: relative;
+    text-align: center;
+}
+
+
+.str-class h3 {
+    font-weight: bolder;
+    /* margin: 100px 0; */
+    margin: -50px 0;
+    margin-bottom: 50px;
+}
+
+.str-class h6 {
+    font-weight: bolder;
+}
+
+#absen .container {
+    max-width: 1080px;
+    margin: 30px;
+    margin: auto;
+}
+
+#absen .container h3 {
+    font-weight: bolder;
+    font-size: 2.7em;
+    padding-bottom: 40px;
+    text-shadow: 2px 2px #ddd;
+    filter: drop-shadow(2px 2px 1px #111);
+}
+
+.container .row.text-center .col,
+.container .row.text-center .col-md {
+    position: relative;
+    font-weight: bold;
+    text-shadow: 1px 1px #ddd;
+    filter: drop-shadow(0 1px 0 #111);
+    transition: .5s;
+}
+
+.row.text-center .col:hover img {
+    filter: drop-shadow(2px 2px 0 blue);
+    transition: .5s;
+}
+
+.row.text-center .col:hover img {
+    border: 1px solid blue;
+    transition: .5s;
+}
+
+.row.text-center .col:hover h6 {
+    position: absolute;
+    width: 80%;
+    /* background-color: lightskyblue; */
+    bottom: 0;
+    /* padding: 5px; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding-bottom: 30px;
+    height: 0;
+    /* transition: .5s; */
+    font-weight: bolder;
+    font-size: 1em;
+    color: rgb(0, 157, 255);
+    text-shadow: 0 1px 0 #fff, 0 -1px 0 #ddd, 0 0 5px #111;
+}
+
+/* .container div div:hover {
+    box-sizing: border-box;
+    border: 2px solid blue;
+    border-radius: 20px;
+} */
+
+
+/* .row.text-center .col:hover .simar {
+    position: absolute;
+    z-index: 1;
+    background-image: url(img/simar.jpg);
+} */
+.row.text-center .col.k-simar h6 {
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .5s;
+    /* text-align: center; */
+}
+.simar-kotak {
+    position: relative;
+}
+
+.simar-kotak img {
+    width: 100%;
+}
+
+.row.text-center .col .simar,
+.row.text-center .col .simar1 {
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    /* width: 100%; */
+}
+
+.row.text-center .col .simar,
+.row.text-center .col .simar1 {
+    opacity: 0;
+}
+
+.row.text-center .col .simar1 {
+    opacity: 1;
+}
+
+.row.text-center .col:hover .simar-kotak .simar {
+    /* position: absolute; */
+    opacity: 1;
+}
+.row.text-center .col:hover.k-simar h6 {
+    position: absolute;
+    bottom: 20px;
+    /* margin-top: 50px; */
+}
+
+.row.text-center .col:hover .simar-kotak .simar1 {
+    opacity: 0;
+}
+
+#about h3 {
+    font-size: 2em;
+    margin-bottom: -20px;
+}
+
+#about .col-md:hover,
+#about .col:hover {
+    text-shadow: 0 0 0 transparent;
+    box-shadow: 0 0 0 transparent;
+    filter: drop-shadow(0 0 0 tranparent);
+}
+
+
+
+footer {
+    text-align: center;
+}
+
+footer h1 {
+    background-color: rgb(40, 40, 40);
+    margin: 0;
+    padding-bottom: 20px;
+    color: white;
+}
+
+footer h1 a {
+    text-decoration: none;
+}
+
+
+section#about {
+    margin-top: -35px;
+}
+
+/* .jumbotron {
+    
+} */
+
+@media screen and (min-width: 480px) {
+
+    svg.ttTibalik {
+        margin-bottom: -20px;
+    }
+
+    .str-class {
+        margin: 30px;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .str-class {
+        margin: auto;
+    }
+
+    svg.tibalik {
+        margin-top: -40px;
+    }
+
+    footer h1 {
+        margin-top: -5px;
+        padding-top: 5px;
+    }
+
+    svg.ttTibalik {
+        margin-bottom: -25px;
+    }
+    .jumbotron.jumbotron-fluid h1 span {
+        font-size: 2.5em;
+    }
+    .row.text-center .col.col:hover.k-simar h6 {
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Sturktur Kelas */
+    .str-class {
+        max-width: 80%;
+    }
+
+    .card.waketu {
+        margin: 50px 0;
+    }
+    .card.waketu .circle::before {
+        clip-path: circle(42% at center)
+    }
+
+    .card.waketu:hover img {
+        top: 70%;
+        width: 35%;
+    }
+    .card.waketu.sekretaris:hover img {
+        width: 35%;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    /* Stuktur Kelas */
+    #project {
+        margin-top: 15%;
+    }
+    .str-class h3 {
+        font-size: 3em;
+    }
+    .str-class {
+        margin: auto;
+    }
+    .card.ketua {
+        transition: .5s;
+    }
+    .card.ketua .circle {
+        transition: .5s;
+    }
+    .card.ketua:hover .circle {
+        box-shadow: 2px 2px #333;
+    }
+    .card.ketua:hover .content-judul h6,
+    .card.ketua:hover .content-isi p {
+        text-shadow: 1px 2px #111;
+        font-size: 2em;
+        margin-top: -15px;
+        text-transform: uppercase;
+    }
+    .card.ketua .circle::before {
+        /* height: 300px; */
+        /* border: 5px solid pink; */
+        /* box-shadow: 2px 2px black; */
+        background-size: 200% auto;
+        color: #000;
+        background-image: repeating-linear-gradient(45deg, white .001%, orange 20%, yellow 30%, green 40%, lightskyblue 50%, blue 60%, purple 70%, #ff00ba 80%, #ff6ee0, #ff0 100%);
+        /* clip-path: linear-gradient(K); */
+        /* background-image: linear-gradient(to right, white 10%, orange 20%, yellow 30%, green 40%, lightskyblue 50%, blue 60%, purple 70%, #ff00ba 80%, #ff6ee0, #ff0 100%); */
+        animation: keren 10s linear infinite;
+        text-shadow: 20px -10px #333;
+    }
+    .card.waketu {
+        margin: 30% 0;
+        /* pointer-events: none; */
+    }
+    .card.waketu .circle::before {
+        clip-path: circle(44% at center);
+    }
+    .card.waketu:hover img {
+        top: 10%;
+        left: 20%;
+        width: 30%;
+    }
+    .card.waketu:hover .content {
+        /* margin-top: 7%; */
+        margin-left: 22%;
+    }
+    .card.waketu:hover .content-judul h6,
+    .card.waketu:hover .content-isi {
+        font-size: 2em;
+    }
+
+    .card.waketu.sekretaris:hover img {
+        width: 30%;
+        left: 80%;
+        top: 10%;
+    }
+    .card.waketu.sekretaris:hover .content {
+        margin-top: 2%;
+        margin-right: 44%;
+    }
+    
+
+    .row.text-center .col:hover h6 {
+        text-shadow: 2px 2px #111;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 1.5em;
+        transition: .5s;
+    }
+
+    svg.ttTibalik {
+        margin-bottom: -42px;
+    }
+
+    .jumbotron.jumbotron-fluid {
+        position: relative;
+        width: 85%;
+        margin: auto;
+    }
+
+
+    .jumbotron.jumbotron-fluid .container h1 span {
+        /* width: 100%; */
+        font-size: 300%;
+    }
+
+    .container h1 .jumb-kiri {
+        position: absolute;
+        bottom: 50px;
+        left: 10px;
+        color: blue;
+        text-shadow: 0 2px 0 #fff, 0 0 10px lightskyblue;
+        padding: 30px;
+    }
+
+    .container h1 .jumb-tengah {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* background-image: linear-gradient(red, white); */
+        color: blue;
+        text-shadow: 0 2px 0 #fff, 0 0 10px lightskyblue;
+        padding: 30px;
+    }
+
+    .container h1 .jumb-kanan {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        color: blue;
+        text-shadow: 0 2px 0 #fff, 0 0 10px lightskyblue;
+        padding: 30px;
+    }
+}
+
+@keyframes keren {
+    to {
+        background-position: 200% center;
+    }
+}
